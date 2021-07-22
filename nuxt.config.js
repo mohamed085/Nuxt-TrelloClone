@@ -46,6 +46,32 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyCeiu9dkXUxcGqCMSs7SA9l55HuUIqcAgc",
+          authDomain: "trello-clone-888a3.firebaseapp.com",
+          projectId: "trello-clone-888a3",
+          storageBucket: "trello-clone-888a3.appspot.com",
+          messagingSenderId: "246776107464",
+          appId: "1:246776107464:web:e0d80232435241f5ac30fd",
+          measurementId: "G-MJPE1H1MS9"
+        },
+        services: {
+          auth: {
+            persistence: 'local', // default
+            initialize: {
+              onAuthStateChangedAction: 'onAuthStateChangedAction',
+              subscribeManually: false
+            },
+            ssr: false, // default
+          },
+          firestore: true,
+          storage: true
+        }
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
